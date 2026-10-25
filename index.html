@@ -141,6 +141,8 @@ h2{font-weight:400}
 .panel .ic{flex:0 0 76px;height:96px;border-radius:40px 40px 10px 10px;background:linear-gradient(160deg,#EDEBD3,var(--sage));border:1px solid var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:1.7rem;color:var(--olive-d);animation:glow 4s infinite}
 
 /* Formularios */
+.deadline{font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--olive-d);margin:2px 0 20px}
+.deadline b{display:block;font-family:var(--sans);font-style:normal;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-top:4px}
 .fg{text-align:left;margin-bottom:16px}
 .fg label{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--olive-d);margin-bottom:8px}
 .fg input[type=text],.fg select,.fg textarea{width:100%;padding:14px;border-radius:12px;border:1px solid rgba(169,139,69,.45);background:rgba(255,255,255,.85);font-family:var(--serif);font-size:1.1rem;color:var(--ink);outline:none;transition:.3s}
@@ -245,6 +247,7 @@ h2{font-weight:400}
 
  <section>
   <div class="hd"><img class="l" src="assets/2.png" alt=""><div class="mid"><h2 class="ttl">Confirma tu asistencia</h2></div><img class="r" src="assets/3.png" alt=""></div>
+  <p class="deadline reveal">Te pido confirmar tu asistencia a más tardar el<b>15 de noviembre</b></p>
   <div class="glass reveal zoom">
    <div id="pase"><p class="cap">PASE DE ENTRADA</p><div class="gn" id="gName">Invitado Especial</div><p>Lugares reservados: <b id="gPases">2</b></p></div>
    <form onsubmit="return false">
