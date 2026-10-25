@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irma · 60 Años y Jubilación · 5 de Diciembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --olive:#5F6F3A; --olive-dark:#2E3A1D; --olive-deep:#232C16; --sage:#A5B58A; --sage-soft:#E4EAD6;
+  --cream:#FBF9F2; --paper:#F4F1E6; --gold:#C6A55C; --gold-light:#EAD9A4; --text:#3B4129; --white:#fff;
+  --f-title:'Playfair Display',serif; --f-script:'Great Vibes',cursive; --f-body:'Lora',serif; --f-sans:'Montserrat',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--f-body);overflow-x:hidden;text-align:center}
+section{position:relative;padding:80px 24px;overflow:hidden}
+.wrap{max-width:560px;margin:0 auto;position:relative;z-index:2}
+h1,h2,h3{font-family:var(--f-title);font-weight:400}
+.eyebrow{font-family:var(--f-sans);font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+.sec-title{font-size:2.3rem;letter-spacing:3px;color:var(--olive-dark);margin-bottom:6px}
+.dark .sec-title{color:var(--gold-light)}
+
+/* Brillos */
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes glow{0%,100%{text-shadow:0 0 6px rgba(198,165,92,.4)}50%{text-shadow:0 0 22px rgba(198,165,92,.95)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes shine{0%{left:-100%}25%,100%{left:200%}}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1)}}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-110vh);opacity:0}}
+.shimmer{background:linear-gradient(90deg,var(--olive) 0%,var(--gold) 35%,#fff 50%,var(--gold) 65%,var(--olive) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 5s linear infinite}
+.dark .shimmer,.shimmer.light{background-image:linear-gradient(90deg,var(--gold) 0%,#fff 40%,var(--gold-light) 60%,var(--gold) 100%);background-size:200% auto}
+.glow{animation:glow 2.6s infinite ease-in-out;color:var(--gold)}
+
+/* Revelados */
+.reveal{opacity:0;transform:translateY(45px);transition:opacity 1.1s cubic-bezier(.25,1,.5,1),transform 1.1s cubic-bezier(.25,1,.5,1)}
+.reveal.zoom{transform:scale(.88)}
+.reveal.left{transform:translateX(-50px)}
+.reveal.visible{opacity:1;transform:none}
+.letters span{display:inline-block;opacity:0;transform:translateY(40px) rotate(6deg);filter:blur(6px);transition:all .9s cubic-bezier(.2,1,.3,1)}
+.letters.visible span{opacity:1;transform:none;filter:none}
+.divider{display:flex;align-items:center;justify-content:center;margin:26px 0;color:var(--gold)}
+.divider::before,.divider::after{content:"";height:1px;width:0;background:var(--gold);margin:0 16px;transition:width 1.2s ease}
+.divider.visible::before,.divider.visible::after{width:70px}
+
+/* Follaje */
+.leaf{position:absolute;width:300px;height:300px;pointer-events:none;z-index:1;opacity:.95}
+.leaf svg{width:100%;height:100%;transform-origin:0 0;animation:sway 7s ease-in-out infinite}
+.leaf.tl{top:-10px;left:-10px}
+.leaf.tr{top:-10px;right:-10px;transform:scaleX(-1)}
+.leaf.bl{bottom:-10px;left:-10px;transform:scaleY(-1)}
+.leaf.br{bottom:-10px;right:-10px;transform:scale(-1,-1)}
+.leaf.small{width:200px;height:200px}
+@media(max-width:600px){.leaf{width:190px;height:190px}.leaf.small{width:130px;height:130px}}
+
+/* Partículas */
+#sparkles{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+.spark{position:absolute;bottom:-20px;border-radius:50%;background:radial-gradient(circle,#fff 0%,var(--gold) 45%,transparent 70%);animation:rise linear forwards}
+.star{position:absolute;color:var(--gold);animation:twinkle 3s ease-in-out infinite;pointer-events:none;z-index:1}
+
+/* Sobre */
+#envelope-screen{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle,#F4F1E6 0%,#C9D3B0 100%);transition:opacity 1.2s ease}
+#envelope-screen .leaf{opacity:.9}
+.env{position:relative;width:340px;max-width:88vw;height:230px;cursor:pointer;perspective:1000px;animation:float 5s infinite ease-in-out;transition:transform .4s;z-index:2}
+.env:hover{transform:scale(1.06)}
+.env-body{position:absolute;inset:0;background:var(--cream);border-radius:4px;box-shadow:0 18px 40px rgba(46,58,29,.3),0 0 30px rgba(198,165,92,.35)}
+.env-front{position:absolute;inset:0;z-index:3;border-left:170px solid #F6F3E8;border-right:170px solid #F6F3E8;border-bottom:120px solid #E9E5D2;border-top:110px solid transparent;pointer-events:none}
+.env-flap{position:absolute;top:0;left:0;width:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-top:130px solid var(--cream);transform-origin:top;transition:transform .9s cubic-bezier(.4,0,.2,1);z-index:4;filter:drop-shadow(0 5px 5px rgba(0,0,0,.12))}
+.seal{position:absolute;top:100px;left:calc(50% - 32px);width:64px;height:64px;border-radius:50%;z-index:5;display:flex;align-items:center;justify-content:center;font-family:var(--f-title);font-size:1.6rem;color:#fff;background:linear-gradient(135deg,var(--gold),#9C7F3C);border:2px solid var(--gold-light);box-shadow:0 0 22px rgba(198,165,92,.85),inset 0 0 10px rgba(255,255,255,.5);transition:opacity .3s}
+.env.open .env-flap{transform:rotateX(180deg);z-index:1;filter:none}
+.env.open .seal{opacity:0}
+.env-text{margin-top:50px;z-index:2;font-family:var(--f-sans);font-size:.85rem;letter-spacing:4px;font-weight:700;color:var(--olive-dark);text-transform:uppercase;animation:glow 2s infinite}
+@media(max-width:380px){.env-front{border-left-width:44vw;border-right-width:44vw}.env-flap{border-left-width:44vw;border-right-width:44vw}}
+
+/* Audio */
+#audio-btn{position:fixed;bottom:22px;right:22px;width:54px;height:54px;border-radius:50%;border:none;background:var(--olive);color:#fff;font-size:1.1rem;cursor:pointer;z-index:9000;display:none;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(198,165,92,.6);transition:.3s}
+#audio-btn:hover{background:var(--gold);transform:scale(1.1)}
+
+/* Contenido */
+#invitation{visibility:hidden;opacity:0;transition:opacity 1.6s ease}
+.btn{position:relative;display:inline-block;overflow:hidden;background:var(--olive);color:var(--cream);font-family:var(--f-sans);font-size:.85rem;font-weight:600;letter-spacing:1.5px;padding:16px 28px;border-radius:50px;border:1px solid rgba(255,255,255,.3);cursor:pointer;text-decoration:none;box-shadow:0 6px 18px rgba(95,111,58,.45);transition:.4s;margin-top:16px}
+.btn::before{content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-25deg);animation:shine 4s infinite}
+.btn:hover{background:var(--gold);transform:translateY(-4px);box-shadow:0 12px 28px rgba(198,165,92,.5)}
+.btn.gold{background:var(--gold)}
+.btn.gold:hover{background:var(--olive)}
+.btn.full{width:100%}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg,var(--cream) 0%,var(--sage-soft) 100%);padding-top:100px}
+.arch{position:relative;width:300px;max-width:78vw;height:400px;margin:26px auto 10px;border-radius:200px 200px 16px 16px;padding:8px;background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold));box-shadow:0 20px 50px rgba(46,58,29,.35),0 0 40px rgba(198,165,92,.4)}
+.arch .ph{width:100%;height:100%;border-radius:194px 194px 10px 10px;overflow:hidden;background:var(--sage)}
+.arch img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.1);animation:kb 14s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1)}}
+.arch::after{content:"";position:absolute;inset:8px;border-radius:194px 194px 10px 10px;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);background-size:250% 100%;animation:shimmer 6s linear infinite;pointer-events:none}
+.badge60{position:absolute;right:-18px;bottom:36px;width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,var(--olive),var(--olive-dark));color:var(--gold-light);display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--gold);box-shadow:0 0 24px rgba(198,165,92,.7);animation:float 4s infinite ease-in-out;z-index:3}
+.badge60 b{font-family:var(--f-title);font-size:1.9rem;line-height:1}
+.badge60 small{font-family:var(--f-sans);font-size:.5rem;letter-spacing:2px;font-weight:700}
+.pre{font-family:var(--f-sans);font-size:.78rem;letter-spacing:4px;font-weight:600;color:var(--olive)}
+.name{font-family:var(--f-script);font-size:6.8rem;line-height:1.05;color:var(--olive);margin:6px 0 0;text-shadow:0 2px 12px rgba(198,165,92,.35)}
+.sub{font-family:var(--f-title);font-style:italic;font-size:1.35rem;color:var(--olive-dark);margin-top:6px}
+.sub b{font-style:normal;font-weight:600;color:var(--gold)}
+.scroll{margin-top:34px;font-size:1.3rem;color:var(--gold);animation:float 2s infinite}
+
+/* Mensaje */
+#mensaje{background:var(--cream)}
+.quote{font-family:var(--f-script);font-size:2.6rem;line-height:1.25;color:var(--olive);margin:10px 0 24px}
+.msg p{font-size:1.15rem;line-height:1.9;margin-bottom:12px}
+.reserved{display:inline-block;margin-top:24px;padding:16px 28px;border:1px solid var(--gold);border-radius:50px;font-family:var(--f-title);font-style:italic;font-size:1.25rem;color:var(--olive-dark);background:rgba(255,255,255,.7);box-shadow:0 0 28px rgba(198,165,92,.3)}
+
+/* Fecha */
+#fecha{background:linear-gradient(180deg,var(--cream),var(--sage-soft))}
+.big-date{font-family:var(--f-title);font-size:1.1rem;letter-spacing:6px;color:var(--olive-dark);font-weight:600}
+.cal{max-width:330px;margin:26px auto;padding:26px 20px;background:rgba(255,255,255,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #fff;border-radius:20px;box-shadow:0 18px 40px rgba(95,111,58,.2),inset 0 0 20px rgba(255,255,255,.8);font-family:var(--f-sans)}
+.cal-m{text-transform:uppercase;letter-spacing:4px;font-weight:700;color:var(--olive-dark);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.grid .h{font-size:.7rem;font-weight:700;color:var(--gold);margin-bottom:6px}
+.grid .d{padding:9px 0;font-size:.9rem;font-weight:500}
+.grid .d.on{background:var(--olive);color:#fff;border-radius:50%;font-weight:700;box-shadow:0 0 20px rgba(95,111,58,.7);animation:glow 2s infinite}
+#count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:420px;margin:26px auto 0}
+#count div{padding:16px 4px;border-radius:14px;background:linear-gradient(160deg,var(--olive),var(--olive-dark));color:var(--gold-light);box-shadow:0 8px 20px rgba(46,58,29,.3);font-family:var(--f-sans);font-size:.62rem;letter-spacing:2px;font-weight:600;border:1px solid rgba(198,165,92,.5)}
+#count b{display:block;font-family:var(--f-title);font-size:1.9rem;color:#fff;margin-bottom:2px}
+
+/* Itinerario */
+.dark{background:radial-gradient(circle at 50% 0%,#3C4A26 0%,var(--olive-deep) 80%);color:var(--cream)}
+.tl{position:relative;margin:40px auto 0;max-width:380px;text-align:left}
+.tl::before{content:"";position:absolute;left:22px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--gold),rgba(198,165,92,.15))}
+.ev{display:flex;align-items:center;margin-bottom:42px;position:relative;transition:transform .4s}
+.ev:hover{transform:translateX(12px)}
+.ev i{flex:0 0 46px;height:46px;border-radius:50%;background:var(--gold);color:var(--olive-deep);display:flex;align-items:center;justify-content:center;margin-right:24px;box-shadow:0 0 0 6px var(--olive-deep),0 0 22px rgba(198,165,92,.7)}
+.ev .t{font-family:var(--f-sans);font-weight:700;font-size:1.35rem;color:var(--gold-light);letter-spacing:1.5px}
+.ev .n{font-size:1.1rem;margin-top:3px;text-transform:uppercase;letter-spacing:2px;font-family:var(--f-sans);font-weight:400;font-size:.85rem}
+
+/* Lugar */
+#lugar{background:var(--cream)}
+.venue{font-family:var(--f-script);font-size:3.6rem;color:var(--olive);line-height:1.1;margin-bottom:8px}
+.map{height:280px;margin:24px 0 4px;border-radius:18px;overflow:hidden;border:5px solid #fff;box-shadow:0 15px 35px rgba(46,58,29,.2);transition:.4s}
+.map:hover{transform:scale(1.02)}
+.map iframe{width:100%;height:100%;border:0}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.card{padding:30px 16px;border-radius:18px;background:rgba(255,255,255,.7);border:1px solid rgba(198,165,92,.5);box-shadow:0 12px 30px rgba(198,165,92,.2);transition:.4s}
+.card:hover{transform:translateY(-6px)}
+.card i{font-size:1.5rem;margin-bottom:12px;display:block}
+.card h3{font-family:var(--f-sans);font-size:.75rem;letter-spacing:3px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.card p{font-family:var(--f-title);font-size:1.4rem;color:var(--olive-dark)}
+.card small{display:block;font-family:var(--f-sans);font-size:.65rem;margin-top:8px;letter-spacing:1px;color:var(--text);opacity:.8;line-height:1.5}
+@media(max-width:420px){.info{grid-template-columns:1fr}}
+
+/* Formularios */
+#rsvp{background:linear-gradient(180deg,var(--sage-soft),var(--cream))}
+.glass{padding:34px 22px;border-radius:22px;background:rgba(255,255,255,.65);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #fff;box-shadow:0 20px 40px rgba(95,111,58,.2),inset 0 0 20px rgba(255,255,255,.8);margin-top:20px;text-align:left}
+.fg{margin-bottom:22px}
+.fg label{display:block;font-family:var(--f-sans);font-size:.8rem;font-weight:700;letter-spacing:1px;color:var(--olive-dark);margin-bottom:8px}
+.fg input[type=text],.fg select,.fg textarea{width:100%;padding:16px;border-radius:12px;border:2px solid rgba(198,165,92,.35);background:rgba(255,255,255,.85);font-family:var(--f-body);font-size:1.02rem;color:var(--text);outline:none;transition:.3s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--olive);box-shadow:0 0 20px rgba(95,111,58,.25);background:#fff}
+.radios{display:flex;gap:18px}
+.radios label{display:flex;align-items:center;gap:6px;font-family:var(--f-body);font-size:1rem;letter-spacing:0;font-weight:600;margin:0;cursor:pointer}
+#pase{display:none;text-align:center;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(198,165,92,.4)}
+#pase .gn{font-family:var(--f-script);font-size:2.6rem;color:var(--olive-dark);margin:10px 0}
+#pase b{color:var(--olive);font-size:1.8rem}
+
+/* Final */
+#gracias{padding:100px 24px 60px}
+#gracias .big{font-family:var(--f-script);font-size:5.5rem;line-height:1;margin-bottom:18px}
+#gracias p.l{font-style:italic;font-size:1.2rem;font-weight:300;margin-bottom:26px}
+.sig{font-family:var(--f-sans);letter-spacing:6px;font-weight:700;text-transform:uppercase;color:var(--gold);font-size:1rem}
+.foot{margin-top:50px;font-family:var(--f-sans);font-size:.62rem;letter-spacing:3px;opacity:.6}
+.foot b{display:block;font-family:var(--f-title);font-size:1.15rem;letter-spacing:2px;color:var(--gold-light);margin:4px 0}
+@media(max-width:480px){.name{font-size:5.4rem}.quote{font-size:2.2rem}}
+</style>
+</head>
+<body>
+
+<!-- Símbolo SVG: rama con follaje y flores blancas -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="lf" d="M0 0C14-14 42-14 58 0C42 14 14 14 0 0Z"/>
+    <g id="fl">
+      <g fill="#fff" stroke="#E7E2CC" stroke-width=".8">
+        <ellipse cx="0" cy="-11" rx="6" ry="11"/><ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(144)"/><ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(288)"/>
+      </g>
+      <circle r="4.5" fill="#C6A55C"/><circle r="1.8" fill="#fff" opacity=".8"/>
+    </g>
+    <symbol id="branch" viewBox="0 0 300 300">
+      <path d="M0 0C70 40 140 90 215 175" stroke="#4B5A2C" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 0C40 70 80 140 120 240" stroke="#4B5A2C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <g fill="#5F6F3A"><use href="#lf" transform="translate(35,22) rotate(20)"/><use href="#lf" transform="translate(70,44) rotate(-10) scale(.9)" fill="#6E7F45"/>
+      <use href="#lf" transform="translate(100,70) rotate(50)" fill="#4B5A2C"/><use href="#lf" transform="translate(130,98) rotate(5)"/>
+      <use href="#lf" transform="translate(160,128) rotate(60) scale(.9)" fill="#7A8C50"/><use href="#lf" transform="translate(190,155) rotate(20) scale(.8)"/>
+      <use href="#lf" transform="translate(20,40) rotate(80)" fill="#6E7F45"/><use href="#lf" transform="translate(45,95) rotate(100)"/>
+      <use href="#lf" transform="translate(70,150) rotate(75) scale(.9)" fill="#4B5A2C"/><use href="#lf" transform="translate(95,200) rotate(105) scale(.8)" fill="#7A8C50"/>
+      <use href="#lf" transform="translate(60,10) rotate(-25) scale(.8)" fill="#7A8C50"/></g>
+      <use href="#fl" transform="translate(50,60) scale(1.1)"/><use href="#fl" transform="translate(112,112) scale(1.3)"/>
+      <use href="#fl" transform="translate(168,168) scale(.95)"/><use href="#fl" transform="translate(30,120) scale(.9)"/>
+      <use href="#fl" transform="translate(78,190) scale(1)"/><use href="#fl" transform="translate(210,185) scale(.7)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<audio id="bg-audio" loop><source src="assets/song.mp3" type="audio/mpeg"></audio>
+<div id="sparkles"></div>
+
+<!-- SOBRE -->
+<div id="envelope-screen">
+  <div class="leaf tl small"><svg><use href="#branch"/></svg></div>
+  <div class="leaf br small"><svg><use href="#branch"/></svg></div>
+  <div class="env" onclick="openInvitation()">
+    <div class="env-front"></div><div class="env-flap"></div>
+    <div class="seal glow">60</div><div class="env-body"></div>
+  </div>
+  <div class="env-text">Toca para abrir</div>
+</div>
+
+<button id="audio-btn" onclick="toggleAudio()"><i class="fa-solid fa-music" id="audio-icon"></i></button>
+
+<main id="invitation">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="leaf tl"><svg><use href="#branch"/></svg></div>
+    <div class="leaf tr"><svg><use href="#branch"/></svg></div>
+    <div class="leaf bl small"><svg><use href="#branch"/></svg></div>
+    <div class="leaf br small"><svg><use href="#branch"/></svg></div>
+    <div class="wrap">
+      <p class="pre reveal">CELEBRA CONMIGO MIS</p>
+      <h2 class="sub reveal" style="margin-top:8px"><b class="shimmer" style="font-size:2.4rem">60 años</b> &amp; mi jubilación</h2>
+      <div class="arch reveal zoom">
+        <div class="ph"><img src="assets/hero.jpg" alt="Irma"></div>
+        <div class="badge60"><b>60</b><small>AÑOS</small></div>
+      </div>
+      <h1 class="name letters" data-split>Irma</h1>
+      <div class="divider reveal"><i class="fa-solid fa-leaf glow"></i></div>
+      <p class="sub reveal">Sábado 5 de diciembre de 2026</p>
+      <div class="scroll"><i class="fa-solid fa-chevron-down"></i></div>
+    </div>
+  </section>
+
+  <!-- MENSAJE -->
+  <section id="mensaje">
+    <div class="leaf tr small"><svg><use href="#branch"/></svg></div>
+    <div class="leaf bl small"><svg><use href="#branch"/></svg></div>
+    <div class="wrap msg">
+      <p class="eyebrow reveal">Con el corazón agradecido</p>
+      <div class="quote reveal zoom shimmer">“Hay momentos en la vida que merecen ser recordados para siempre.”</div>
+      <div class="divider reveal"><i class="fa-solid fa-spa glow"></i></div>
+      <p class="reveal">Seis décadas de aprendizajes, y una vida de trabajo que hoy cierra un hermoso capítulo para dar paso a una etapa nueva y luminosa.</p>
+      <p class="reveal">Me encantaría abrazar a quienes me han acompañado en mi camino y brindar juntos por lo vivido y por todo lo que viene.</p>
+      <div class="reserved reveal zoom"><i class="fa-solid fa-sparkles glow"></i> ¡Tu lugar está reservado en mi fiesta!</div>
+    </div>
+  </section>
+
+  <!-- FECHA -->
+  <section id="fecha">
+    <div class="wrap">
+      <p class="eyebrow reveal">Reserva la fecha</p>
+      <h2 class="sec-title reveal">Sábado</h2>
+      <p class="big-date reveal">5 · 12 · 2026</p>
+      <div class="cal reveal zoom">
+        <div class="cal-m">Diciembre 2026</div>
+        <div class="grid" id="cal-head"></div>
+        <div class="grid" id="cal-days"></div>
+      </div>
+      <div id="count" class="reveal">
+        <div><b id="dd">00</b>DÍAS</div><div><b id="hh">00</b>HRS</div><div><b id="mm">00</b>MIN</div><div><b id="ss">00</b>SEG</div>
+      </div>
+      <button class="btn reveal" onclick="downloadICS()"><i class="fa-regular fa-calendar-plus"></i> AGREGAR AL CALENDARIO</button>
+    </div>
+  </section>
+
+  <!-- ITINERARIO -->
+  <section class="dark" id="itinerario">
+    <div class="leaf tl small"><svg><use href="#branch"/></svg></div>
+    <div class="leaf br small"><svg><use href="#branch"/></svg></div>
+    <div class="wrap">
+      <h2 class="sec-title reveal">ITINERARIO</h2>
+      <div class="divider reveal"><i class="fa-solid fa-clock glow"></i></div>
+      <div class="tl">
+        <div class="ev reveal left"><i class="fa-solid fa-champagne-glasses"></i><div><div class="t">20:00 HRS</div><div class="n">Recepción</div></div></div>
+        <div class="ev reveal left"><i class="fa-solid fa-utensils"></i><div><div class="t">21:00 HRS</div><div class="n">Cena</div></div></div>
+        <div class="ev reveal left"><i class="fa-solid fa-wine-glass"></i><div><div class="t">21:45 HRS</div><div class="n">Vals y Brindis</div></div></div>
+        <div class="ev reveal left"><i class="fa-solid fa-music"></i><div><div class="t">22:00 HRS</div><div class="n">Apertura de pista</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUGAR -->
+  <section id="lugar">
+    <div class="leaf tr small"><svg><use href="#branch"/></svg></div>
+    <div class="wrap">
+      <p class="eyebrow reveal">Recepción</p>
+      <div class="venue reveal zoom shimmer">Río Blanco Eventos</div>
+      <div class="map reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3730.631987442308!2d-103.3947372!3d20.7657051!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a50e09c1b2cf%3A0xa59463dd7aa189b9!2sR%C3%ADo%20Blanco%20Eventos!5e0!3m2!1ses!2smx!4v1792885491249!5m2!1ses!2smx" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <a href="https://maps.app.goo.gl/RiBLLddrXuPSHnw39" target="_blank" class="btn full reveal"><i class="fa-solid fa-location-arrow"></i> CÓMO LLEGAR</a>
+      <div class="info">
+        <div class="card reveal zoom"><i class="fa-solid fa-user-tie glow"></i><h3>VESTIMENTA</h3><p>Formal</p><small>Te esperamos con tu mejor elegancia</small></div>
+        <div class="card reveal zoom"><i class="fa-solid fa-gift glow"></i><h3>MESA DE REGALOS</h3><p>No aplica</p><small>Tu presencia es mi mejor regalo</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <div class="leaf tl small"><svg><use href="#branch"/></svg></div>
+    <div class="leaf br small"><svg><use href="#branch"/></svg></div>
+    <div class="wrap">
+      <h2 class="sec-title reveal">ASISTENCIA</h2>
+      <div class="divider reveal"><i class="fa-solid fa-envelope-open-text glow"></i></div>
+      <div class="glass reveal zoom">
+        <div id="pase">
+          <p class="eyebrow">PASE DE ENTRADA</p>
+          <div class="gn" id="gName">Invitado Especial</div>
+          <p>Lugares reservados: <b id="gPases">2</b></p>
+        </div>
+        <form id="rsvpForm" onsubmit="return false">
+          <div id="generic">
+            <div class="fg"><label>Nombre(s):</label><input type="text" id="rsvpNombre" placeholder="Ej. Juan"></div>
+            <div class="fg"><label>Apellido(s):</label><input type="text" id="rsvpApellido" placeholder="Ej. Pérez"></div>
+            <div class="fg"><label>¿Asistirás?:</label>
+              <select id="rsvpAsistencia"><option value="">Selecciona una opción</option><option value="¡Sí, ahí estaré!">¡Sí, ahí estaré!</option><option value="Lamentablemente no podré asistir">Lamentablemente no podré asistir</option></select>
+            </div>
+          </div>
+          <div id="guestList"></div>
+          <button type="button" class="btn full" onclick="sendRSVP()" style="padding:20px;font-size:1.05rem"><i class="fa-brands fa-whatsapp"></i> CONFIRMAR</button>
+        </form>
+      </div>
+
+      <h2 class="sec-title reveal" style="margin-top:70px">LIBRO DE FIRMAS</h2>
+      <div class="divider reveal"><i class="fa-solid fa-pen-fancy glow"></i></div>
+      <div class="glass reveal zoom">
+        <form onsubmit="return false">
+          <div class="fg"><label>Déjale unas palabras a Irma:</label><textarea id="wishesText" rows="5" placeholder="¡Felicidades por tus 60 años y tu jubilación!"></textarea></div>
+          <button type="button" class="btn gold full" onclick="sendWishes()" style="padding:20px;font-size:1.05rem"><i class="fa-brands fa-whatsapp"></i> ENVIAR MENSAJE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRACIAS -->
+  <section class="dark" id="gracias">
+    <div class="leaf tl"><svg><use href="#branch"/></svg></div>
+    <div class="leaf tr"><svg><use href="#branch"/></svg></div>
+    <div class="wrap">
+      <div class="big shimmer light reveal zoom">¡Gracias!</div>
+      <p class="l reveal">Tu compañía hará de esta noche un recuerdo inolvidable.</p>
+      <div class="sig reveal">Irma</div>
+      <div class="foot reveal">DISEÑADO POR<b>INVYTIA</b>ESSENTIAL DESIGN</div>
+    </div>
+  </section>
+</main>
+
+<script>
+const audio=document.getElementById('bg-audio'),icon=document.getElementById('audio-icon'),abtn=document.getElementById('audio-btn');
+const WA="523332474821";
+let opened=false;
+
+function openInvitation(){
+  if(opened)return;opened=true;
+  document.querySelector('.env').classList.add('open');
+  audio.play().then(()=>{icon.className='fa-solid fa-pause'}).catch(()=>{});
+  setTimeout(()=>{
+    const s=document.getElementById('envelope-screen'),c=document.getElementById('invitation');
+    s.style.opacity='0';c.style.visibility='visible';c.style.opacity='1';abtn.style.display='flex';
+    setTimeout(()=>{s.style.display='none';observeAll()},1200);
+  },900);
+}
+function toggleAudio(){
+  if(audio.paused){audio.play();icon.className='fa-solid fa-pause'}
+  else{audio.pause();icon.className='fa-solid fa-music'}
+}
+
+// Letras animadas
+document.querySelectorAll('[data-split]').forEach(el=>{
+  const t=el.textContent;el.textContent='';
+  [...t].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;s.style.transitionDelay=(i*.14)+'s';el.appendChild(s)});
+});
+
+// Observer
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.15});
+function observeAll(){document.querySelectorAll('.reveal,.divider,.letters').forEach(el=>io.observe(el))}
+
+// Chispas doradas
+const sp=document.getElementById('sparkles');
+setInterval(()=>{
+  const d=document.createElement('div');d.className='spark';
+  const sz=3+Math.random()*7;
+  d.style.cssText=`left:${Math.random()*100}%;width:${sz}px;height:${sz}px;animation-duration:${7+Math.random()*8}s`;
+  sp.appendChild(d);setTimeout(()=>d.remove(),15000);
+},650);
+// Estrellas fijas en secciones
+document.querySelectorAll('section').forEach(sec=>{
+  for(let i=0;i<5;i++){
+    const s=document.createElement('i');s.className='fa-solid fa-sparkle star';s.textContent='✦';
+    s.style.cssText=`left:${8+Math.random()*84}%;top:${8+Math.random()*84}%;font-size:${8+Math.random()*12}px;animation-delay:${Math.random()*4}s`;
+    sec.appendChild(s);
+  }
+});
+
+// Calendario Diciembre 2026 (1 dic = martes)
+(function(){
+  const h=document.getElementById('cal-head'),d=document.getElementById('cal-days');
+  ['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'].forEach(x=>h.innerHTML+=`<div class="h">${x}</div>`);
+  d.innerHTML='<div></div><div></div>';
+  for(let i=1;i<=31;i++)d.innerHTML+=`<div class="d${i===5?' on':''}">${i}</div>`;
+})();
+
+// Invitados dinámicos (?invitado=Familia&pases=3&nombres=Ana,Luis,Pedro)
+document.addEventListener('DOMContentLoaded',()=>{
+  const p=new URLSearchParams(location.search),inv=p.get('invitado'),pas=p.get('pases'),nom=p.get('nombres');
+  if(inv&&pas){document.getElementById('pase').style.display='block';document.getElementById('gName').textContent=inv;document.getElementById('gPases').textContent=pas}
+  if(nom){
+    let h='<label style="font-family:var(--f-sans);font-weight:700;display:block;margin-bottom:16px;color:var(--olive-dark)">Selecciona quiénes asisten:</label>';
+    nom.split(',').forEach((n,i)=>{
+      h+=`<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(198,165,92,.3)"><span style="font-weight:600;flex:1;min-width:120px">${n.trim()}</span><div class="radios"><label><input type="radio" name="a_${i}" value="Sí"> Sí</label><label><input type="radio" name="a_${i}" value="No"> No</label></div></div>`;
+    });
+    document.getElementById('guestList').innerHTML=h;document.getElementById('generic').style.display='none';
+  }
+});
+
+// Cuenta regresiva: 5 dic 2026, 20:00
+const target=new Date("Dec 5, 2026 20:00:00").getTime();
+const tick=setInterval(()=>{
+  const dist=target-Date.now();
+  if(dist<0){clearInterval(tick);document.getElementById('count').innerHTML="<div style='grid-column:1/-1;font-family:var(--f-script);font-size:2.4rem;letter-spacing:0'>¡Hoy es la fiesta!</div>";return}
+  const f=n=>String(n).padStart(2,'0');
+  dd.textContent=f(Math.floor(dist/864e5));hh.textContent=f(Math.floor(dist%864e5/36e5));
+  mm.textContent=f(Math.floor(dist%36e5/6e4));ss.textContent=f(Math.floor(dist%6e4/1e3));
+},1000);
+
+// RSVP
+function sendRSVP(){
+  const p=new URLSearchParams(location.search),nom=p.get('nombres'),inv=p.get('invitado');let m='';
+  if(nom){
+    const ok=[],no=[];let all=true;
+    nom.split(',').forEach((n,i)=>{
+      const o=document.querySelector(`input[name="a_${i}"]:checked`);
+      if(!o)all=false;else if(o.value==='Sí')ok.push(n.trim());else no.push(n.trim());
+    });
+    if(!all){alert("Por favor, selecciona si asiste o no cada persona de la lista.");return}
+    m=`¡Hola Irma! Somos *${inv||'Familia'}* y esta es nuestra confirmación para tu fiesta de 60 años y jubilación:\n\n`;
+    if(ok.length)m+=`✅ *Asistirán:*\n- ${ok.join('\n- ')}\n\n`;
+    if(no.length)m+=`❌ *No podrán asistir:*\n- ${no.join('\n- ')}\n\n`;
+  }else{
+    const n=rsvpNombre.value.trim(),a=rsvpApellido.value.trim(),s=rsvpAsistencia.value;
+    if(!n||!a||!s){alert("Por favor, completa tu nombre, apellido y estado de asistencia.");return}
+    m=`Hola Irma, soy *${n} ${a}*.\n\nQuiero confirmar mi respuesta a tu fiesta de 60 años y jubilación: *${s}*\n\n`;
+  }
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,'_blank');
+}
+function sendWishes(){
+  const w=wishesText.value.trim();
+  if(!w){alert("Por favor, escribe un mensaje primero.");return}
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(`¡Hola Irma! Te dejo unas palabras en tu libro de firmas:\n\n"${w}"`)}`,'_blank');
+}
+
+// Calendario ICS (20:00 hora de Guadalajara = 02:00 UTC del día siguiente)
+function downloadICS(){
+  const c=`BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Irma 60//ES\nBEGIN:VEVENT\nDTSTART:20261206T020000Z\nDTEND:20261206T080000Z\nSUMMARY:60 años y jubilación de Irma\nLOCATION:Río Blanco Eventos\nDESCRIPTION:¡Tu lugar está reservado en mi fiesta!\nEND:VEVENT\nEND:VCALENDAR`;
+  const u=URL.createObjectURL(new Blob([c],{type:'text/calendar;charset=utf-8'}));
+  const a=document.createElement('a');a.href=u;a.download='Fiesta_Irma_60.ics';document.body.appendChild(a);a.click();a.remove();
+}
+</script>
+</body>
+</html>
